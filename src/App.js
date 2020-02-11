@@ -18,7 +18,7 @@ class App extends React.Component {
     const positionClicked = {};
     positionClicked.lat = clickEvent.latLng.lat();
     positionClicked.lng = clickEvent.latLng.lng();
-    const response;
+    let response = {};
     if (process.env.develop)
       response = await axios.get(
         `http://localhost:8000/getCountryData?lat=${clickEvent.latLng.lat()}&lng=${clickEvent.latLng.lng()}`
