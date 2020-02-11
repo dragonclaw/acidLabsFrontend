@@ -1,7 +1,7 @@
-import React from 'react';
-import { Map, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
-import axios from 'axios';
-import './App.css';
+import React from "react";
+import { Map, GoogleApiWrapper, InfoWindow } from "google-maps-react";
+import axios from "axios";
+import "./App.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class App extends React.Component {
       `http://localhost:8000/getCountryData?lat=${clickEvent.latLng.lat()}&lng=${clickEvent.latLng.lng()}`
     );
     const dataSelectedGoogle = response.data.dataCountry.find(item =>
-      item.types.includes('country')
+      item.types.includes("country")
     );
     this.setState({
       showingInfoWindow: true,
@@ -34,47 +34,47 @@ class App extends React.Component {
 
   mapStyle = [
     {
-      stylers: [{ hue: '#00ffe6' }, { saturation: -20 }]
+      stylers: [{ hue: "#00ffe6" }, { saturation: -20 }]
     },
     {
-      featureType: 'landscape',
-      stylers: [{ hue: '#ffff66' }, { saturation: 100 }]
+      featureType: "landscape",
+      stylers: [{ hue: "#ffff66" }, { saturation: 100 }]
     },
     {
-      featureType: 'road',
-      stylers: [{ visibility: 'off' }]
+      featureType: "road",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'administrative.land_parcel',
-      stylers: [{ visibility: 'off' }]
+      featureType: "administrative.land_parcel",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'administrative.locality',
-      stylers: [{ visibility: 'off' }]
+      featureType: "administrative.locality",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'administrative.neighborhood',
-      stylers: [{ visibility: 'off' }]
+      featureType: "administrative.neighborhood",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'administrative.province',
-      stylers: [{ visibility: 'off' }]
+      featureType: "administrative.province",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'landscape.man_made',
-      stylers: [{ visibility: 'off' }]
+      featureType: "landscape.man_made",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'landscape.natural',
-      stylers: [{ visibility: 'off' }]
+      featureType: "landscape.natural",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'poi',
-      stylers: [{ visibility: 'off' }]
+      featureType: "poi",
+      stylers: [{ visibility: "off" }]
     },
     {
-      featureType: 'transit',
-      stylers: [{ visibility: 'off' }]
+      featureType: "transit",
+      stylers: [{ visibility: "off" }]
     }
   ];
 
@@ -86,8 +86,8 @@ class App extends React.Component {
 
   render() {
     const mapStyles = {
-      width: '100%',
-      height: '100%'
+      width: "100%",
+      height: "100%"
     };
 
     return (
@@ -96,7 +96,7 @@ class App extends React.Component {
         google={this.props.google}
         zoom={4}
         style={mapStyles}
-        gestureHandling={'cooperative'}
+        gestureHandling={"cooperative"}
         zoomControl={false}
         initialCenter={{ lat: -27.444, lng: -72.176 }}
         onReady={(mapProps, map) => this._mapLoaded(mapProps, map)}
@@ -119,5 +119,5 @@ class App extends React.Component {
 }
 //Should be on env file (dev key)
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBFVbeIYwImYD2zVQhw3TbQSfFhR5s-S4Y'
+  apiKey: "AIzaSyCh9_jIXfxtM-CUCLqShqv894WGOSH_96Q"
 })(App);
