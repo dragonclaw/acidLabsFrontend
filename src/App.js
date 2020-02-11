@@ -2,6 +2,7 @@ import React from "react";
 import { Map, GoogleApiWrapper, InfoWindow } from "google-maps-react";
 import axios from "axios";
 import "./App.css";
+import config from "./config";
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends React.Component {
     positionClicked.lat = clickEvent.latLng.lat();
     positionClicked.lng = clickEvent.latLng.lng();
     let response = {};
-    if (process.env.develop)
+    console.log(config.GOOGLE_API_KEY);
+    if (config.develop)
       response = await axios.get(
         `http://localhost:8000/getCountryData?lat=${clickEvent.latLng.lat()}&lng=${clickEvent.latLng.lng()}`
       );
@@ -125,5 +127,5 @@ class App extends React.Component {
 }
 //Should be on env file (dev key)
 export default GoogleApiWrapper({
-  apiKey: process.env.DB_GOOGLE_API_KEY
+  apiKey: config.GOOGLE_API_KEY
 })(App);
