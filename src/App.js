@@ -13,7 +13,7 @@ class App extends React.Component {
       position: {}
     };
   }
-  //Should call a service scaffolding
+  //Should abstract the call to a service scaffolding file
   mapClicked = async (mapProps, map, clickEvent) => {
     const positionClicked = {};
     positionClicked.lat = clickEvent.latLng.lat();
