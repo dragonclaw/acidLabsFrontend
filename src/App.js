@@ -18,12 +18,13 @@ class App extends React.Component {
     const positionClicked = {};
     positionClicked.lat = clickEvent.latLng.lat();
     positionClicked.lng = clickEvent.latLng.lng();
+    const response;
     if (process.env.develop)
-      const response = await axios.get(
+      response = await axios.get(
         `http://localhost:8000/getCountryData?lat=${clickEvent.latLng.lat()}&lng=${clickEvent.latLng.lng()}`
       );
     else
-      const response = await axios.get(
+      response = await axios.get(
         `http://ec2-52-39-106-8.us-west-2.compute.amazonaws.com:8000/getCountryData?lat=${clickEvent.latLng.lat()}&lng=${clickEvent.latLng.lng()}`
       );
     const dataSelectedGoogle = response.data.dataCountry.find(item =>
