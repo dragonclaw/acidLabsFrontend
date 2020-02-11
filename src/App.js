@@ -119,5 +119,5 @@ class App extends React.Component {
 }
 //Should be on env file (dev key)
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyCh9_jIXfxtM-CUCLqShqv894WGOSH_96Q"
+  apiKey: process.env.DB_GOOGLE_API_KEY
 })(App);
