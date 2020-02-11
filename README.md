@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# acidLabsFrontend
+
+Acid Labs frontend running on reactjs. To run install with npm install, and then npm start (it should be loaded the Backend on port 8000 in order to work)
+
 ## Available Scripts
 
 In the project directory, you can run:
