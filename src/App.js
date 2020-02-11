@@ -13,6 +13,7 @@ class App extends React.Component {
       position: {}
     };
   }
+  //Should call a service scaffolding
   mapClicked = async (mapProps, map, clickEvent) => {
     const positionClicked = {};
     positionClicked.lat = clickEvent.latLng.lat();
@@ -116,7 +117,7 @@ class App extends React.Component {
     );
   }
 }
-
+//Should be on env file (dev key)
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyBFVbeIYwImYD2zVQhw3TbQSfFhR5s-S4Y'
 })(App);
